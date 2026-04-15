@@ -9,7 +9,7 @@ function updateName() {
 </script>
 
 <template>
-  <p class="text-sm">这是主页</p>
+  <p>这是主页</p>
   <p>当前登录的账号是:{{ accountStore.account.name }}</p>
   <p>当前登录的邮箱是:{{ accountStore.account.email }}</p>
   <a-button type="primary" @click="updateName">更新名字</a-button>

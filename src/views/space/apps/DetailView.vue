@@ -83,7 +83,7 @@ const send = async () => {
               class="flex-shrink-0"
               :size="30"
             >
-              H
+              慕
             </a-avatar>
             <a-avatar
               v-else
@@ -96,7 +96,7 @@ const send = async () => {
             <!-- 实际消息 -->
             <div class="flex flex-col gap-2">
               <div class="font-semibold text-gray-700">
-                {{ message.role === 'human' ? 'hayho' : '聊天机器人' }}
+                {{ message.role === 'human' ? '慕小课' : 'ChatGPT聊天机器人' }}
               </div>
               <div
                 v-if="message.role === 'human'"
@@ -120,7 +120,7 @@ const send = async () => {
             <a-avatar :size="70" shape="square" :style="{ backgroundColor: '#00d0b6' }">
               <icon-apps />
             </a-avatar>
-            <div class="text-2xl font-semibold text-gray-900">聊天机器人</div>
+            <div class="text-2xl font-semibold text-gray-900">ChatGPT聊天机器人</div>
           </div>
           <!-- AI加载状态 -->
           <div v-if="isLoading" class="flex flex-row gap-2 mb-6">
@@ -153,7 +153,8 @@ const send = async () => {
             <div
               class="h-[50px] flex items-center gap-2 px-4 flex-1 border border-gray-200 rounded-full"
             >
-              <input type="text" class="flex-1 outline-0" v-model="query" @keyup.enter="send" />
+              <!-- <input type="text" class="flex-1 outline-0" v-model="query" @keyup.enter="send" /> -->
+              <a-input class="bg-transparent hover:bg-transparent border-none" v-model="query" @keyup.enter="send" placeholder="输入内容" allow-clear />
               <a-button type="text" shape="circle">
                 <template #icon>
                   <icon-plus-circle size="16" :style="{ color: '#374151' }" />
